@@ -12,7 +12,7 @@
           <Password id="password" v-model="password" toggleMask :feedback="false" />
         </div>
         <span>
-          <Button label="Отравить" @click="adminLogin">
+          <Button label="Отравить" @click="adminLogin" :loading="loading">
             <span>Отравить</span>
           </Button>
         </span>
@@ -37,7 +37,8 @@ onMounted(() => {
   document.title = 'Авторизоваться | DeviceShopMaster'
 })
 
-const errors = ref([])
+const errors = ref<string[]>([])
+const loading = ref(false)
 
 async function adminLogin() {
   errors.value = []
@@ -50,7 +51,8 @@ async function adminLogin() {
     errors.value.push('Пароли всегда длиннее 8 символов!')
   }
   if (!errors.value.length) {
-    axios
+    loading.value = await true
+    await axios
       .post('/auth/token/login/', {
         username: username.value,
         password: password.value
@@ -78,6 +80,7 @@ async function adminLogin() {
           life: 3000
         }
       })
+    loading.value = false
   } else {
     for (let i = 0; i < errors.value.length; i++) {
       generalData.alertMessage = await {
