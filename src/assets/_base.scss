@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  word-wrap: break-word;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+}

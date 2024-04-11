@@ -1,0 +1,22 @@
+.light-theme-customization {
+  --primary-color: #0037fa;
+  --text-color: #0b1217;
+  --bg-color: white;
+  --bg-color-2: #e3eaf3;
+  --line: rgba(21, 35, 46, 0.4);
+  --icon: none;
+  --transition: all 0.25s cubic-bezier(0.44, 0.01, 0.61, 0.98);
+  --red: #ff204e;
+  --green: #4ade80;
+}
+.dark-theme-customization {
+  --primary-color: #0037fa;
+  --text-color: white;
+  --bg-color: #15232e;
+  --bg-color-2: #1f2935;
+  --line: rgba(255, 255, 255, 0.2);
+  --icon: invert(100%);
+  --transition: all 0.25s cubic-bezier(0.44, 0.01, 0.61, 0.98);
+  --red: #ff204e;
+  --green: #4ade80;
+}
